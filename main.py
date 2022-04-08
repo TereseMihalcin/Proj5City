@@ -6,8 +6,8 @@ import random
 # Terese Mihalcin and Germaine Uwimpuhwe
 
 people = 150
-x = [random.randint(1, 200) for i in range(people)]
-y = [random.randint(1, 200) for i in range(people)]
+x = [random.randint(1, 20) for i in range(people)]
+y = [random.randint(1, 20) for i in range(people)]
 
 peoplePoints = np.zeros((len(x), 2))
 for i in range(len(x)):
@@ -15,8 +15,8 @@ for i in range(len(x)):
     peoplePoints[i, 1] = (y[i])
 
 hotels = 20
-a = [random.randint(1, 200) for i in range(hotels)]
-b = [random.randint(1, 200) for i in range(hotels)]
+a = [random.randint(1, 20) for i in range(hotels)]
+b = [random.randint(1, 20) for i in range(hotels)]
 
 hotelPoints = np.zeros((len(a), 2))
 for i in range(len(a)):
@@ -28,14 +28,15 @@ plt.grid(True)
 plt.scatter(x, y)
 plt.scatter(a, b)
 # changed range to 20 for testing purposes should be (0,200)
-plt.xlim(0, 200)
-plt.ylim(0, 200)
+plt.xlim(0, 20)
+plt.ylim(0, 20)
 
 # allows the scale to increment by 1
 ax.yaxis.set_major_locator(plt.MultipleLocator(1))
 ax.xaxis.set_major_locator(plt.MultipleLocator(1))
 
 # show plot
+plt.savefig('hotelPlot.png')
 plt.show()
 
 
